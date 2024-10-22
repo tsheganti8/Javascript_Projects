@@ -1,0 +1,25 @@
+.myCategories ul li{
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 20px 0;
+    margin-bottom: 1px;
+    display: flex;
+}
+
+.myCategories ul{
+    padding: 0;
+    background-color: rgb(223, 216, 216)
+}
+
+.myCategories li{
+    background-color: #ffffff;
+}
+
+.img{
+    padding-right: 12px;
+}
+
+.myCategories span{
+    padding-top: 5px;
+    padding-left: 22px;
+}

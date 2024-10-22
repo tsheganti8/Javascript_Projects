@@ -1,0 +1,35 @@
+<div class="app-container">
+  <div class="left-nav" [class.collapsed]="isCollapsed">
+    <button class="toggle-btn" (click)="toggleNav()">☰</button>
+    <ul>
+      <span class="org">
+        <img src="https://img.icons8.com/ios/50/for-you.png" alt="for-you"/>
+        <h1 id="h1">Organizer</h1>
+      </span>
+      <li>
+        <a routerLink="/dashboard" (click)="navigateToDashboard()">Dashboard</a>
+      </li>
+      <li>
+        <a href="#">My Tasks</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+    </ul>
+    <li class="settings">
+      <a href="#">Settings</a>
+    </li>
+  </div>
+  
+  <div class="main" [class.collapsed]="isCollapsed">
+    <div class="Search-bar" [class.collapsed]="isCollapsed">
+      <input class="Search" type="search" placeholder="Search"/>
+       <!-- Navigate to the "Create New Task" page -->
+       <button class="newTask" (click)="navigateToCreateNewTask()">New Task</button>
+    </div>
+    
+    <app-loading-screen *ngIf="loadingService.loading$ | async"></app-loading-screen>
+      <!-- The router-outlet to load routed content -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

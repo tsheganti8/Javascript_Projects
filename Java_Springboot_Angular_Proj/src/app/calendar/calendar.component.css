@@ -1,0 +1,241 @@
+.calendar{
+    width: auto;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 10px 0; 
+}
+
+.header button {
+    background: none; 
+    border: none; 
+    font-size: 24px; 
+    cursor: pointer; 
+}
+
+.header h2 {
+    margin: 0; 
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.weekdays{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.weekdays, .dates {
+    display: grid; /* Use grid layout for alignment */
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for the days of the week */
+    text-align: center;
+    margin: 0; /* Remove margins to ensure alignment */
+    padding: 5px 0px 5px 0px;
+}
+
+.dates div {
+    padding: 10px; /* Add padding for better spacing */
+    border: 1px solid transparent; /* Optional: Add a border to help visualize */
+}
+
+.dates div.past,
+.dates div.future {
+    color: gray; /* Blurs the text */
+}
+
+.dates div.current {
+    font-weight: bold;
+    color: rgb(245, 236, 59); /* Highlight current date */
+}
+
+.dates {
+    margin-top: 10px; /* Add some space between weekdays and dates */
+}
+
+/* Base Styles */
+.calendar {
+    width: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.weekdays, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.dates div {
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.dates div.past, .dates div.future {
+    color: gray;
+}
+
+.dates div.current {
+    font-weight: bold;
+    color: rgb(245, 236, 59);
+}
+
+.dates {
+    margin-top: 10px;
+}
+
+/* Laptop Screens (min-width: 1024px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .header h2 {
+        font-size: 22px; /* Slightly smaller for standard laptops */
+    }
+
+    .header button {
+        font-size: 22px;
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(7, 1fr); /* Retain 7 columns */
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .dates div {
+        padding: 8px; /* Slightly smaller padding */
+        font-size: 16px; /* Adjust font size to fit */
+    }
+
+    .weekdays div {
+        font-size: 14px;
+    }
+}
+
+/* Small Laptops (min-width: 1024px) and larger screens */
+@media (min-width: 1441px) {
+    .header h2 {
+        font-size: 24px; /* Full size for larger laptops */
+    }
+
+    .header button {
+        font-size: 24px;
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(7, 1fr); /* Ensure 7 columns fit */
+    }
+
+    .dates div {
+        padding: 10px; /* Larger padding */
+        font-size: 18px; /* Larger font for readability */
+    }
+}
+
+/* Small Laptop Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .header h2 {
+        font-size: 20px; /* Slightly smaller header for smaller laptops */
+    }
+
+    .header button {
+        font-size: 20px;
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(7, 1fr); /* Still maintain 7 columns */
+        padding: 4px 0;
+    }
+
+    .dates div {
+        padding: 6px; /* Reduced padding for compactness */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .weekdays div {
+        font-size: 12px; /* Smaller font for weekdays */
+    }
+}
+
+
+
+/* Media Queries for Responsive Layout */
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 20px; /* Smaller header for tablet-sized devices */
+    }
+
+    .header button {
+        font-size: 20px; /* Smaller buttons */
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(7, 1fr); /* Still 7 columns, but elements may shrink */
+    }
+
+    .dates div {
+        padding: 8px; /* Smaller padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 18px; /* Even smaller header for mobile phones */
+    }
+
+    .header button {
+        font-size: 18px; /* Smaller buttons */
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(3, 1fr); /* Show 3 columns per row on mobile */
+        grid-auto-rows: minmax(40px, auto); /* Ensure dates have enough height */
+    }
+
+    .dates div {
+        padding: 6px; /* Reduce padding further for mobile */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .weekdays div {
+        font-size: 12px; /* Reduce font size for weekday names */
+    }
+}
+
+@media (max-width: 320px) {
+    .header h2 {
+        font-size: 16px; /* For very small screens */
+    }
+
+    .header button {
+        font-size: 16px;
+    }
+
+    .weekdays, .dates {
+        grid-template-columns: repeat(2, 1fr); /* Show 2 columns per row on very small screens */
+    }
+
+    .dates div {
+        padding: 4px;
+        font-size: 12px; /* Small text for compact view */
+    }
+}

@@ -1,0 +1,392 @@
+
+.app-container {
+    display: flex; 
+    height: 100vh; 
+    overflow: hidden; 
+    padding-top: 10px;
+}
+
+.left-nav{
+    background-color: #ffffff;
+    position: fixed;
+    width: 250px;
+    height: -webkit-fill-available;
+    box-shadow: 2px 0 5px  rgb(243, 239, 168);
+    left: 0;
+    top: 20px;
+    padding: 20px;
+    padding-left: 0;
+    border: 2px solid rgb(243, 239, 168);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    overflow-y: auto; 
+}
+
+.left-nav ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    background-color:  rgb(223, 216, 216);
+}
+
+.left-nav li{
+    font-weight: 200;
+    padding: 10px;
+    margin: 1px 0;
+    margin-top: auto;
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+    background-color: #ffffff;
+    font-size: small;
+    cursor: pointer;
+}
+
+.left-nav a{
+    text-decoration: none;
+    color: black;
+    padding-left: 20px;
+    padding-bottom: 18px;
+}
+
+.left-nav li:hover { 
+    background-color: rgb(243, 239, 168);
+}
+
+.left-nav:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+
+.left-nav .settings{
+    padding: 0;
+    border: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+.org #h1{
+    padding-left: 6px;
+}
+
+.org{
+    font-size: 8px;
+    display: flex;
+    background-color: #ffffff;
+    margin-bottom: 2px;
+    padding: 2px;
+}
+
+.org img{
+    width: 30px;
+    height: 30px;
+    padding-top: 6px;
+}
+
+.left-nav.collapsed .org img{
+    display: none;
+}
+
+.left-nav.collapsed{
+    width: 60px;
+    background-color:  rgb(223, 216, 216);
+    padding-top: 4px;
+    border: none;
+    box-shadow: none;
+}
+
+.left-nav.collapsed ul li a {
+    display: none;
+    align-items: center;
+}
+
+.left-nav.collapsed  ul li {
+    background-color:  rgb(223, 216, 216);
+}
+
+.left-nav.collapsed .org{
+    background-color:  rgb(223, 216, 216);
+}
+
+.left-nav.collapsed h1{
+    display: none;
+}
+
+.toggle-btn{
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.left-nav.collapsed .settings {
+   display: none;
+}
+
+/* Keep this CSS for main content display */
+.main{
+    margin-left: 270px;
+    padding: 0 7px 30px 40px;
+    width: calc(100% - 270px);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    overflow-y: auto; 
+}
+
+.main.collapsed{
+    margin-left: 80px; 
+    width: calc(100% - 80px);
+}
+
+.Search-bar{
+    background-color: #ffffff;
+    border: 2px solid  rgb(245, 236, 59);
+    border-radius: 10px;
+    padding: 7px 10px; 
+    width: 724px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgb(245, 236, 59);
+}
+
+.Search{
+    background-color: rgb(223, 216, 216);
+    border: 2px;
+    border-radius: 7px;
+    padding: 4px 45px 5px 15px;
+    width: 165px;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.Search:hover {
+    transform: translateX(2px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.Search-bar:hover {
+    transform: translateX(2px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+} 
+
+
+.newTask{
+    background-color:white;
+    border: 2px solid rgb(245, 236, 59);
+    border-radius: 7px;
+    padding: 3px 23px 5px 23px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.newTask:hover {
+    transform: translateX(2px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.Search-bar.collapsed{
+    width: auto;
+}
+
+
+
+
+
+
+
+
+/* Responsive for laptop screens */
+
+/* Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .left-nav {
+        width: 200px; /* Slightly smaller nav width */
+    }
+    
+    .left-nav.collapsed {
+        width: 60px; /* Reduced width for collapsed state */
+    }
+    
+    .main {
+        margin-left: 220px; /* Adjust main content margin */
+        width: calc(100% - 220px);
+    }
+    
+    .main.collapsed {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .Search-bar {
+        width: auto; /* Adjust search bar width */
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+/* Standard Laptops (min-width: 1025px and max-width: 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .left-nav {
+        width: 220px; /* Standard nav width */
+    }
+
+    .left-nav.collapsed {
+        width: 60px;
+    }
+
+    .main {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    .main.collapsed {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .Search-bar {
+        width: auto; /* Adjust search bar width */
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+/* Large Laptops (min-width: 1441px) */
+@media (min-width: 1441px) {
+    .left-nav {
+        width: 250px; /* Full size */
+    }
+
+    .left-nav.collapsed {
+        width: 60px;
+    }
+
+    .main {
+        margin-left: 270px;
+    }
+
+    .main.collapsed {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .Search-bar {
+        width: auto; /* Full-size search bar */
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .left-nav {
+        width: 200px; /* Slightly narrower on tablet */
+    }
+
+    .left-nav.collapsed {
+        width: 50px; /* Further reduce collapsed width */
+    }
+}
+
+@media (max-width: 480px) {
+    .left-nav {
+        width: 150px; /* Even narrower on mobile */
+    }
+
+    .left-nav.collapsed {
+        width: 40px; /* Collapse for mobile */
+    }
+}
+
+@media (max-width: 1024px) {
+    .Search-bar {
+        width: 80%; /* Make the search bar width 80% of the screen */
+    }
+
+    .Search {
+        width: 150px; /* Adjust the width of the input */
+    }
+}
+
+@media (max-width: 768px) {
+    .Search-bar {
+        width: 90%; 
+        padding: 5px; 
+    }
+
+    .Search {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Search-bar {
+        width: 95%; 
+    }
+
+    .Search {
+        width: 90px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .newTask {
+        padding: 4px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newTask {
+        padding: 4px 20px; /* Further adjust padding for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 220px; /* Adjust for tablet */
+        width: calc(100% - 220px); /* Calculate width dynamically */
+    }
+
+    .main-content.collapsed {
+        margin-left: 70px; /* Adjust for collapsed nav on tablet */
+        width: calc(100% - 70px); /* Adjust width accordingly */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        margin-left: 160px; /* Adjust for mobile */
+        width: calc(100% - 160px); /* Calculate width dynamically */
+    }
+
+    .main-content.collapsed {
+        margin-left: 50px; /* Adjust for collapsed nav on mobile */
+        width: calc(100% - 50px); /* Adjust width accordingly */
+    }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .myCalender,
+    .myTasks,
+    .myCategories,
+    .myTracking {
+        width: calc(100% - 10px); /* Full width on small screens */
+        overflow-y: auto; 
+    }
+}

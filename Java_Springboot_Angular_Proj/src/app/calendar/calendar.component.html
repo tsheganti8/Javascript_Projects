@@ -1,0 +1,16 @@
+<div class="header">
+  <button (click)="prevMonth()">❮</button>
+  <h2>{{ month }} {{ year }}</h2>
+  <button (click)="nextMonth()">❯</button>
+</div>
+<div class="calendar">
+  <div class="weekdays">
+    <div *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" class="weekday">{{ day }}</div>
+  </div>
+  <div class="dates">
+    <div *ngFor="let day of days" 
+         [ngClass]="{'past': day.isPast, 'current': day.isCurrent, 'future': day.isFuture}">
+      {{ day.date }}
+    </div>
+  </div>
+</div>

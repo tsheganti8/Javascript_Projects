@@ -1,0 +1,136 @@
+.main{
+    margin-left: 270px;
+    padding: 0 7px 30px 40px;
+    width: calc(100% - 270px);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    overflow-y: auto; 
+}
+
+.main.collapsed{
+    margin-left: 80px; 
+    width: calc(100% - 80px);
+}
+
+.category-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.myCalender, .myTasks, .myCategories, .myTracking{
+    background-color: #ffffff;
+    border: 2px solid  rgb(245, 236, 59);
+    border-radius: 10px;
+    padding: 10px 30px;
+    width: 350px;
+    height: 100%;
+    box-shadow: 2px 0 5px rgb(245, 236, 59);
+}
+
+/* Add hover effect */
+.myCalender:hover,
+.myTasks:hover,
+.myCategories:hover,
+.myTracking:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+
+/* Responsive for laptop screens */
+
+/* Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .main {
+        margin-left: 220px; /* Adjust main content margin */
+        width: calc(100% - 220px);
+    }
+    
+    .main.collapsed {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+/* Standard Laptops (min-width: 1025px and max-width: 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .main {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    .main.collapsed {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+/* Large Laptops (min-width: 1441px) */
+@media (min-width: 1441px) {
+    .main {
+        margin-left: 270px;
+    }
+
+    .main.collapsed {
+        margin-left: 80px;
+    }
+
+    .myCalender, .myTasks, .myCategories, .myTracking {
+        width: 390px;
+        height: auto;
+        overflow-y: auto; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 220px; /* Adjust for tablet */
+        width: calc(100% - 220px); /* Calculate width dynamically */
+    }
+
+    .main-content.collapsed {
+        margin-left: 70px; /* Adjust for collapsed nav on tablet */
+        width: calc(100% - 70px); /* Adjust width accordingly */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        margin-left: 160px; /* Adjust for mobile */
+        width: calc(100% - 160px); /* Calculate width dynamically */
+    }
+
+    .main-content.collapsed {
+        margin-left: 50px; /* Adjust for collapsed nav on mobile */
+        width: calc(100% - 50px); /* Adjust width accordingly */
+    }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .myCalender,
+    .myTasks,
+    .myCategories,
+    .myTracking {
+        width: calc(100% - 10px); /* Full width on small screens */
+        overflow-y: auto; 
+    }
+}
