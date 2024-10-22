@@ -1,0 +1,9 @@
+<div class="myCategories">
+<h3>My Categories</h3>
+<ul>
+  <li *ngFor="let category of categories">
+    <img [src]="category.icon" [alt]="category.alt" [class]="category.imgClass" width="25" height="25"/>
+    <span [class]="category.spanClass">{{ category.name }}</span>
+  </li>
+</ul>
+</div>

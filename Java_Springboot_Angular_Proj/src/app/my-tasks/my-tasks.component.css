@@ -1,0 +1,94 @@
+.myTasks ul li{
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 0 20px 0;
+    margin-bottom: 1px;
+}
+
+.myTasks ul{
+    padding: 0;
+    background-color: rgb(223, 216, 216);
+    margin: 0;
+}
+
+.myTasks li{
+    background-color: #ffffff;
+}
+
+.myTasks h3{
+    margin: 0;
+    padding: 5px 0 9px 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.task-label {
+    display: inline-block; /* Allows width constraints */
+    max-width: 200px; /* Adjust based on your layout */
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hides overflow content */
+    text-overflow: ellipsis; /* Shows ellipsis for overflowed text */
+}
+
+/* To specifically limit to three words */
+.task-label::after {
+    content: attr(data-full-text); /* Get the full text for reference */
+    display: none; /* Hide the full text */
+}
+
+/* Add a class to truncate to three words */
+.truncate {
+    max-width: calc(25ch + 2px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Additional styling for task items */
+.myTasks li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+
+.checkbox + label::before {
+    content: "";
+    background-color: rgb(223, 216, 216);
+    border-radius: 50%;
+    border: 1px solid black;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 6px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.checkbox:checked + label::before {
+    background-color: rgb(245, 236, 59);  /* yellow background when checked */
+    border-color: black;
+}
+
+/* Create the checkmark (tick) when the checkbox is checked */
+.checkbox:checked + label::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); /* Tick appearance */
+    top: 6px;  /* Adjust position inside the checkbox */
+    left: 6px; /* Adjust tick placement */
+    transition: transform 0.3s ease;
+}
+
+/* Positioning of the label */
+.checkbox + label {
+    position: relative;
+    padding-left: 10px; /* Add space for the custom checkbox */
+    cursor: pointer;
+}

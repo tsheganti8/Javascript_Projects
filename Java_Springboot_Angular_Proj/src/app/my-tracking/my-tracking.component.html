@@ -1,0 +1,22 @@
+<div class="myTracking">
+<h3>My Tracking</h3>
+<ul>
+   <li *ngFor="let track of tracks" class="tracking-items">
+    <div class="tracking-content">
+        <span *ngIf="!track.isEditing" (dblclick)="enableRename(track)">{{ track.name }}</span>
+        <input *ngIf="track.isEditing" [(ngModel)]="track.name" (keydown)="renameTrack($event, track)" />
+    </div>
+    
+    <div class="timer">{{ track.time.hours }}h : {{ track.time.minutes }}m : {{ track.time.seconds }}s</div> 
+
+    <div class="action-buttons">
+        <img 
+        [src]="track.isPlaying ? 'https://img.icons8.com/ios/50/pause--v1.png' : 'https://img.icons8.com/ios/50/play--v1.png'"
+        alt="Play/Pause Button" 
+        (click)="togglePlayPause(track)"/>
+        <!-- <img src="https://img.icons8.com/ios/50/stop.png" alt="stop"/> -->
+        <img src="https://img.icons8.com/ios/50/reboot.png" alt="reboot" (click)="resetTimer(track)" />
+    </div>
+    </li>
+</ul>
+</div>

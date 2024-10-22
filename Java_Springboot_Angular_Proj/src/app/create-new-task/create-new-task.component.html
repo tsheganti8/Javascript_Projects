@@ -1,0 +1,23 @@
+<div class="create-task">
+  <form (ngSubmit)="onSubmit()">
+    <div class="taskName">
+      <label for="taskName">Task Name:</label>
+      <input type="text" id="taskName" [(ngModel)]="taskName" name="taskName" required>
+    </div>
+
+    <div class="category">
+      <label for="category">Select Category: </label>
+      <select id="category" [(ngModel)]="selectedCategory" name="category" required>
+        <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+      </select>
+    </div>
+
+    <div class="date">
+      <label for="startDate">Select a Date:</label>
+      <input type="date" id="startDate" name="startDate" min="2023-01-01" max="2035-12-31" required>
+    </div>
+    <div class="submit">
+      <button type="submit">CREATE TASK</button>
+    </div>
+  </form>
+</div>

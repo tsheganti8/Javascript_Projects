@@ -1,0 +1,76 @@
+.create-task {
+    padding: 17px 7px 30px 40px;
+    width: auto;
+    margin-left: 0;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+    background-color: white;
+    border: 2px solid rgb(245, 236, 59);
+    border-radius: 7px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+    cursor: pointer;
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* One column layout */
+    grid-row-gap: 20px; /* Space between rows */
+    justify-items: start; /* Align inputs to start */
+    align-items: center; /* Vertically align inputs */
+}
+
+.create-task.collapsed{
+    margin-left: 80px; 
+    width: calc(100% - 80px);
+}
+
+/* .taskName, .category, .date {
+    border: 2px;
+    border-radius: 7px;
+    padding-bottom: 30px;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    text-align: center;
+} */
+
+.taskName label, .category label, .date label {
+    padding-right: 0; /* Remove padding from labels */
+    text-align: left; /* Align labels to the left */
+    font-weight: bold; /* Make labels bold for emphasis */
+    display: block; /* Ensure labels are full width above input */
+    margin-bottom: 8px; /* Add space between label and input */
+}
+
+.taskName input, .category select, .date input {
+    padding: 10px; /* Adjust padding for input fields */
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    margin: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%; /* Full width for inputs */
+}
+
+.taskName input:hover, .category select:hover, .date input:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+
+button {
+    background-color:white;
+    border: 2px solid rgb(245, 236, 59);
+    border-radius: 7px;
+    padding: 9px 24px 8px 23px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 40px;
+    grid-column: span 2; /* Make the button span across both columns */
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+}
